@@ -1,0 +1,26 @@
+[
+	{
+		"file": "C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Source\\Prototyping\\Prototyping.Build.cs",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\.vscode\\compileCommands_Default\\Prototyping.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Source\\Prototyping\\Prototyping.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\.vscode\\compileCommands_Default\\Prototyping.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Source\\Prototyping\\Prototyping.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\.vscode\\compileCommands_Default\\Prototyping.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	}
+]
