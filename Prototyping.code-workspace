@@ -11,7 +11,10 @@
 	],
 	"settings": {
 		"typescript.tsc.autoDetect": "off",
-		"npm.autoDetect": "off"
+		"npm.autoDetect": "off",
+		"files.associations": {
+			"*.ipp": "cpp"
+		}
 	},
 	"extensions": {
 		"recommendations": [
@@ -30,7 +33,7 @@
 					"Prototyping",
 					"Win64",
 					"Debug",
-					"C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Prototyping.uproject",
+					"C:\\_Projects\\GitHub\\Prototyping\\Prototyping.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -47,7 +50,7 @@
 					"Prototyping",
 					"Win64",
 					"Debug",
-					"C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Prototyping.uproject",
+					"C:\\_Projects\\GitHub\\Prototyping\\Prototyping.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -67,7 +70,7 @@
 					"Prototyping",
 					"Win64",
 					"Debug",
-					"C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Prototyping.uproject",
+					"C:\\_Projects\\GitHub\\Prototyping\\Prototyping.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -84,7 +87,7 @@
 					"Prototyping",
 					"Win64",
 					"DebugGame",
-					"C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Prototyping.uproject",
+					"C:\\_Projects\\GitHub\\Prototyping\\Prototyping.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -101,7 +104,7 @@
 					"Prototyping",
 					"Win64",
 					"DebugGame",
-					"C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Prototyping.uproject",
+					"C:\\_Projects\\GitHub\\Prototyping\\Prototyping.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -121,7 +124,7 @@
 					"Prototyping",
 					"Win64",
 					"DebugGame",
-					"C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Prototyping.uproject",
+					"C:\\_Projects\\GitHub\\Prototyping\\Prototyping.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -138,7 +141,7 @@
 					"Prototyping",
 					"Win64",
 					"Development",
-					"C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Prototyping.uproject",
+					"C:\\_Projects\\GitHub\\Prototyping\\Prototyping.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -155,7 +158,7 @@
 					"Prototyping",
 					"Win64",
 					"Development",
-					"C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Prototyping.uproject",
+					"C:\\_Projects\\GitHub\\Prototyping\\Prototyping.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -175,7 +178,7 @@
 					"Prototyping",
 					"Win64",
 					"Development",
-					"C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Prototyping.uproject",
+					"C:\\_Projects\\GitHub\\Prototyping\\Prototyping.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -192,7 +195,7 @@
 					"Prototyping",
 					"Win64",
 					"Test",
-					"C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Prototyping.uproject",
+					"C:\\_Projects\\GitHub\\Prototyping\\Prototyping.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -209,7 +212,7 @@
 					"Prototyping",
 					"Win64",
 					"Test",
-					"C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Prototyping.uproject",
+					"C:\\_Projects\\GitHub\\Prototyping\\Prototyping.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -229,7 +232,7 @@
 					"Prototyping",
 					"Win64",
 					"Test",
-					"C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Prototyping.uproject",
+					"C:\\_Projects\\GitHub\\Prototyping\\Prototyping.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -246,7 +249,7 @@
 					"Prototyping",
 					"Win64",
 					"Shipping",
-					"C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Prototyping.uproject",
+					"C:\\_Projects\\GitHub\\Prototyping\\Prototyping.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -263,7 +266,7 @@
 					"Prototyping",
 					"Win64",
 					"Shipping",
-					"C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Prototyping.uproject",
+					"C:\\_Projects\\GitHub\\Prototyping\\Prototyping.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -283,7 +286,7 @@
 					"Prototyping",
 					"Win64",
 					"Shipping",
-					"C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Prototyping.uproject",
+					"C:\\_Projects\\GitHub\\Prototyping\\Prototyping.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -300,7 +303,7 @@
 					"PrototypingEditor",
 					"Win64",
 					"Debug",
-					"C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Prototyping.uproject",
+					"C:\\_Projects\\GitHub\\Prototyping\\Prototyping.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -317,7 +320,7 @@
 					"PrototypingEditor",
 					"Win64",
 					"Debug",
-					"C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Prototyping.uproject",
+					"C:\\_Projects\\GitHub\\Prototyping\\Prototyping.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -337,7 +340,7 @@
 					"PrototypingEditor",
 					"Win64",
 					"Debug",
-					"C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Prototyping.uproject",
+					"C:\\_Projects\\GitHub\\Prototyping\\Prototyping.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -354,7 +357,7 @@
 					"PrototypingEditor",
 					"Win64",
 					"DebugGame",
-					"C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Prototyping.uproject",
+					"C:\\_Projects\\GitHub\\Prototyping\\Prototyping.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -371,7 +374,7 @@
 					"PrototypingEditor",
 					"Win64",
 					"DebugGame",
-					"C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Prototyping.uproject",
+					"C:\\_Projects\\GitHub\\Prototyping\\Prototyping.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -391,7 +394,7 @@
 					"PrototypingEditor",
 					"Win64",
 					"DebugGame",
-					"C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Prototyping.uproject",
+					"C:\\_Projects\\GitHub\\Prototyping\\Prototyping.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -408,7 +411,7 @@
 					"PrototypingEditor",
 					"Win64",
 					"Development",
-					"C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Prototyping.uproject",
+					"C:\\_Projects\\GitHub\\Prototyping\\Prototyping.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -425,7 +428,7 @@
 					"PrototypingEditor",
 					"Win64",
 					"Development",
-					"C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Prototyping.uproject",
+					"C:\\_Projects\\GitHub\\Prototyping\\Prototyping.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -445,7 +448,7 @@
 					"PrototypingEditor",
 					"Win64",
 					"Development",
-					"C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Prototyping.uproject",
+					"C:\\_Projects\\GitHub\\Prototyping\\Prototyping.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
@@ -462,7 +465,7 @@
 			{
 				"name": "Launch Prototyping (Debug)",
 				"request": "launch",
-				"program": "C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Binaries\\Win64\\UnrealGame-Win64-Debug.exe",
+				"program": "C:\\_Projects\\GitHub\\Prototyping\\Binaries\\Win64\\UnrealGame-Win64-Debug.exe",
 				"preLaunchTask": "Prototyping Win64 Debug Build",
 				"args": [
 				],
@@ -478,7 +481,7 @@
 			{
 				"name": "Launch Prototyping (DebugGame)",
 				"request": "launch",
-				"program": "C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Binaries\\Win64\\UnrealGame-Win64-DebugGame.exe",
+				"program": "C:\\_Projects\\GitHub\\Prototyping\\Binaries\\Win64\\UnrealGame-Win64-DebugGame.exe",
 				"preLaunchTask": "Prototyping Win64 DebugGame Build",
 				"args": [
 				],
@@ -494,7 +497,7 @@
 			{
 				"name": "Launch Prototyping (Development)",
 				"request": "launch",
-				"program": "C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Binaries\\Win64\\UnrealGame.exe",
+				"program": "C:\\_Projects\\GitHub\\Prototyping\\Binaries\\Win64\\UnrealGame.exe",
 				"preLaunchTask": "Prototyping Win64 Development Build",
 				"args": [
 				],
@@ -510,7 +513,7 @@
 			{
 				"name": "Launch Prototyping (Test)",
 				"request": "launch",
-				"program": "C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Binaries\\Win64\\UnrealGame-Win64-Test.exe",
+				"program": "C:\\_Projects\\GitHub\\Prototyping\\Binaries\\Win64\\UnrealGame-Win64-Test.exe",
 				"preLaunchTask": "Prototyping Win64 Test Build",
 				"args": [
 				],
@@ -526,7 +529,7 @@
 			{
 				"name": "Launch Prototyping (Shipping)",
 				"request": "launch",
-				"program": "C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Binaries\\Win64\\UnrealGame-Win64-Shipping.exe",
+				"program": "C:\\_Projects\\GitHub\\Prototyping\\Binaries\\Win64\\UnrealGame-Win64-Shipping.exe",
 				"preLaunchTask": "Prototyping Win64 Shipping Build",
 				"args": [
 				],
@@ -545,7 +548,7 @@
 				"program": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-Debug.exe",
 				"preLaunchTask": "PrototypingEditor Win64 Debug Build",
 				"args": [
-					"C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Prototyping.uproject"
+					"C:\\_Projects\\GitHub\\Prototyping\\Prototyping.uproject"
 				],
 				"cwd": "C:\\Program Files\\Epic Games\\UE_5.4",
 				"stopAtEntry": false,
@@ -562,7 +565,7 @@
 				"program": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-DebugGame.exe",
 				"preLaunchTask": "PrototypingEditor Win64 DebugGame Build",
 				"args": [
-					"C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Prototyping.uproject"
+					"C:\\_Projects\\GitHub\\Prototyping\\Prototyping.uproject"
 				],
 				"cwd": "C:\\Program Files\\Epic Games\\UE_5.4",
 				"stopAtEntry": false,
@@ -579,7 +582,7 @@
 				"program": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Binaries\\Win64\\UnrealEditor.exe",
 				"preLaunchTask": "PrototypingEditor Win64 Development Build",
 				"args": [
-					"C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Prototyping.uproject"
+					"C:\\_Projects\\GitHub\\Prototyping\\Prototyping.uproject"
 				],
 				"cwd": "C:\\Program Files\\Epic Games\\UE_5.4",
 				"stopAtEntry": false,
@@ -599,7 +602,7 @@
 				"args": [
 					"-projectfiles",
 					"-vscode",
-					"-project=C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Prototyping.uproject",
+					"-project=C:\\_Projects\\GitHub\\Prototyping\\Prototyping.uproject",
 					"-game",
 					"-engine",
 					"-dotnet"

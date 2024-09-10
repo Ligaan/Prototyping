@@ -6,7 +6,7 @@
             "cStandard": "c17",
             "cppStandard": "c++20",
             "intelliSenseMode": "msvc-x64",
-            "compileCommands": "C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\.vscode\\compileCommands_Prototyping.json"
+            "compileCommands": "C:\\_Projects\\GitHub\\Prototyping\\.vscode\\compileCommands_Prototyping.json"
         },
         {
             "name": "Win32",
@@ -14,7 +14,7 @@
             "cStandard": "c17",
             "cppStandard": "c++20",
             "intelliSenseMode": "msvc-x64",
-            "compileCommands": "C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\.vscode\\compileCommands_Default.json"
+            "compileCommands": "C:\\_Projects\\GitHub\\Prototyping\\.vscode\\compileCommands_Default.json"
         }
     ],
     "version": 4
