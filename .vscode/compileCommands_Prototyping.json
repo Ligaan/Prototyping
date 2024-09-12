@@ -1,25 +1,41 @@
 [
 	{
-		"file": "C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Source\\Prototyping\\Prototyping.Build.cs",
+		"file": "C:\\_Projects\\GitHub\\Prototyping\\Source\\Prototyping\\Private\\NewGravityMovementComponent.cpp",
 		"arguments": [
 			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\Hostx64\\x64\\cl.exe",
-			"@C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\.vscode\\compileCommands_Prototyping\\Prototyping.1.rsp"
+			"@C:\\_Projects\\GitHub\\Prototyping\\.vscode\\compileCommands_Prototyping\\Prototyping.1.rsp"
 		],
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
 	},
 	{
-		"file": "C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Source\\Prototyping\\Prototyping.cpp",
+		"file": "C:\\_Projects\\GitHub\\Prototyping\\Source\\Prototyping\\Private\\Prototyping.cpp",
 		"arguments": [
 			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\Hostx64\\x64\\cl.exe",
-			"@C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\.vscode\\compileCommands_Prototyping\\Prototyping.1.rsp"
+			"@C:\\_Projects\\GitHub\\Prototyping\\.vscode\\compileCommands_Prototyping\\Prototyping.1.rsp"
 		],
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
 	},
 	{
-		"file": "C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\Source\\Prototyping\\Prototyping.h",
+		"file": "C:\\_Projects\\GitHub\\Prototyping\\Source\\Prototyping\\Prototyping.Build.cs",
 		"arguments": [
 			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\Hostx64\\x64\\cl.exe",
-			"@C:\\_Projects\\GitHub\\Prototyping_Repo\\Prototyping\\.vscode\\compileCommands_Prototyping\\Prototyping.1.rsp"
+			"@C:\\_Projects\\GitHub\\Prototyping\\.vscode\\compileCommands_Prototyping\\Prototyping.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\_Projects\\GitHub\\Prototyping\\Source\\Prototyping\\Public\\NewGravityMovementComponent.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\_Projects\\GitHub\\Prototyping\\.vscode\\compileCommands_Prototyping\\Prototyping.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
+	},
+	{
+		"file": "C:\\_Projects\\GitHub\\Prototyping\\Source\\Prototyping\\Public\\Prototyping.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\_Projects\\GitHub\\Prototyping\\.vscode\\compileCommands_Prototyping\\Prototyping.1.rsp"
 		],
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source"
 	}
