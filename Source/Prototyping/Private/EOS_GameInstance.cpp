@@ -65,6 +65,11 @@ void UEOS_GameInstance::OnCreateEOSSessionCompleted(FName SessionName, bool Succ
     }
 }
 
+void UEOS_GameInstance::OnDestroyEOSSessionCompleted(FName SessionName, bool Success)
+{
+    UE_LOG(LogTemp,Warning,TEXT("Session Destroyed!"));
+}
+
 void UEOS_GameInstance::OnFindSessionCompleted(bool Success)
 {
 }
@@ -84,7 +89,7 @@ void UEOS_GameInstance::CreateEOSSession(bool bIsDedicatedServer, bool IsLANServ
             SessionCreationInfo.bAllowInvites = true;
             SessionCreationInfo.bIsLANMatch = IsLANServer;
             SessionCreationInfo.NumPublicConnections = NumOfPublicConnections;
-            SessionCreationInfo.bUseLobbiesIfAvailable = true;
+            SessionCreationInfo.bUseLobbiesIfAvailable = false;
             SessionCreationInfo.bUsesPresence = false;
             SessionCreationInfo.bShouldAdvertise = true;
             SessionCreationInfo.Set(SEARCH_KEYWORDS,FString("RandomHi"),EOnlineDataAdvertisementType::ViaOnlineService);
@@ -100,4 +105,16 @@ void UEOS_GameInstance::FindSessionAndJoin(bool bIsDedicatedServer, bool IsLANSe
 
 void UEOS_GameInstance::JoinSession()
 {
+}
+
+void UEOS_GameInstance::DestroySession()
+{
+     IOnlineSubsystem *SubsystemRef = IOnlineSubsystem::Get();
+    if(SubsystemRef){
+        IOnlineSessionPtr SessionPtrRef = SubsystemRef->GetSessionInterface();
+        if(SessionPtrRef){
+            SessionPtrRef->OnDestroySessionCompleteDelegates.AddUObject(this,&UEOS_GameInstance::OnDestroyEOSSessionCompleted);
+            SessionPtrRef->DestroySession(FName("MainSession"));
+        }
+    }
 }

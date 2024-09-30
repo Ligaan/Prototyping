@@ -20,9 +20,6 @@ class PROTOTYPING_API UEOS_GameInstance : public UGameInstance
 	UFUNCTION(BlueprintCallable, Category="EOS Functions")
 	void LogInWithEOS(FString ID,FString token,FString LoginType);
 
-	UFUNCTION(BlueprintCallable, Category="EOS Functions")
-	void LogOutWithEOS(FString ID,FString token,FString LoginType);
-
 	UFUNCTION(BlueprintCallable,BlueprintPure, Category="EOS Functions")
 	FString GetPlayerUsername();
 
@@ -38,6 +35,8 @@ class PROTOTYPING_API UEOS_GameInstance : public UGameInstance
 	UFUNCTION(BlueprintCallable, Category="EOS Functions")
 	void JoinSession();
 
+	UFUNCTION(BlueprintCallable, Category="EOS Functions")
+	void DestroySession();
 	//TSharedRef<FOnlineSessionSearch> SessionSearch;
 
 	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="EOS Variables")
@@ -45,6 +44,7 @@ class PROTOTYPING_API UEOS_GameInstance : public UGameInstance
 
 	void LogInWithEOSReturn(int32 LocalUserNum,bool bWasSuccess,const FUniqueNetId& UserID,const FString& error);
 	void OnCreateEOSSessionCompleted(FName SessionName,bool Success);
+	void OnDestroyEOSSessionCompleted(FName SessionName,bool Success);
 	void OnFindSessionCompleted(bool Success);
 	void OnJoinSessionCompleted(FName SessionName, EOnJoinSessionCompleteResult::Type Result);
 };
