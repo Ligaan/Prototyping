@@ -42,7 +42,7 @@ void UTestGameInstance::CreateSession(FName sessionName,int32 NumOfPublicConnect
         SessionSettings.bShouldAdvertise = true;  // Advertise the session to others
         SessionSettings.bUsesPresence = true;  // Use presence for EOS matchmaking
         SessionSettings.bAllowInvites = true;
-        SessionSettings.bUseLobbiesIfAvailable = true;
+        SessionSettings.bUseLobbiesIfAvailable = false;
 
         SessionSettings.Set(FName("SESSION_NAME_KEY"), sessionName.ToString(), EOnlineDataAdvertisementType::ViaOnlineService);
 
@@ -91,7 +91,6 @@ void UTestGameInstance::FindSessions(FString LookForName)
 
 void UTestGameInstance::JoinSession(FName Session)
 {   
-    FindSession(Session);
     if (SessionInterface.IsValid() && SessionSearch.IsValid() && SessionSearch->SearchResults.Num() > 0)
     {
         // Bind delegate for joining session
@@ -99,7 +98,8 @@ void UTestGameInstance::JoinSession(FName Session)
             FOnJoinSessionCompleteDelegate::CreateUObject(this, &UTestGameInstance::OnJoinSessionComplete));
 
         // Join the first available session
-        SessionInterface->JoinSession(0, Session, SessionSearch->SearchResults[0]);
+        UE_LOG(LogTemp, Error, TEXT("Close to joining?"));
+        SessionInterface->JoinSession(0, Session, SessionSearch->SearchResults[SessionSearchIndex]);
     }
 }
 
@@ -213,11 +213,16 @@ void UTestGameInstance::CloseOldSession()
                                 *UEnum::GetDisplayValueAsText(SessionInterface->GetNamedSession(SessionName)->SessionState).ToString());
                                 }
                         }*/
-                        SessionInterface->EndSession(FName(PlayerUserId));
+                        //SessionInterface->EndSession(FName(PlayerUserId));
+                        SessionInterface->DestroySession(FName(PlayerUserId));
                         UE_LOG(LogTemp, Warning, TEXT("All good?"));
                     }
                 }
             }
+        }else{
+            //SessionInterface->EndSession(FName(PlayerUserId));
+            SessionInterface->DestroySession(FName(PlayerUserId));
+                        UE_LOG(LogTemp, Warning, TEXT("All good?"));
         }
     }
 }
@@ -253,7 +258,8 @@ void UTestGameInstance::FindSession(FName SessionName)
         SessionSearch->MaxSearchResults = 20;  // Limit the number of search results
         SessionSearch->PingBucketSize = 200;  // Max ping allowed for session
 
-        SessionSearch->QuerySettings.Set(FName("SESSION_NAME_KEY"), SessionName, EOnlineComparisonOp::Equals);
+        SessionToJoin = SessionName.ToString();
+        //SessionSearch->QuerySettings.Set(FName("SESSION_NAME_KEY"), SessionName, EOnlineComparisonOp::Equals);
         // Bind delegate for session finding
         FindSessionsCompleteDelegateHandle = SessionInterface->AddOnFindSessionsCompleteDelegate_Handle(
             FOnFindSessionsCompleteDelegate::CreateUObject(this, &UTestGameInstance::OnFindJoinResultComplete));
@@ -262,6 +268,7 @@ void UTestGameInstance::FindSession(FName SessionName)
         SessionInterface->FindSessions(0, SessionSearch.ToSharedRef());
     }
 }
+
 void UTestGameInstance::OnCreateSessionComplete(FName SessionName, bool bWasSuccessful)
 {
 
@@ -279,6 +286,8 @@ void UTestGameInstance::OnCreateSessionComplete(FName SessionName, bool bWasSucc
         //GetWorld()->ServerTravel(OpenLevelText);
         SessionExisting = true;
         lSessionName = SessionName;
+
+        JoinSession(SessionName);
     }
     else
     {
@@ -307,13 +316,14 @@ void UTestGameInstance::OnFindSessionsComplete(bool bWasSuccessful)
             for (const FOnlineSessionSearchResult& SearchResult : SessionSearch->SearchResults)
             {
                 FString SessionName;
-
+                UE_LOG(LogTemp, Warning, TEXT("Brooooooooooooooo"));
                 // Retrieve the custom session name from the session settings
                 if (SearchResult.Session.SessionSettings.Get(FName("SESSION_NAME_KEY"), SessionName))
-                {
+                {UE_LOG(LogTemp, Warning, TEXT("Brooooooooooooooo%s"),*SessionDesiredName);
                     // Check if the session name contains the desired substring
                     if (SessionName.Contains(SessionDesiredName))
                     {
+                        UE_LOG(LogTemp, Warning, TEXT("Brooooooooooooooo"));
                         FSessionCustomUIType currentSessionData = {};
                         FString SessionId = SearchResult.GetSessionIdStr();
                         int32 NumOpenPublicConnections = SearchResult.Session.NumOpenPublicConnections;
@@ -413,13 +423,22 @@ void UTestGameInstance::OnFindJoinResultComplete(bool bWasSuccessful)
     {
         UE_LOG(LogTemp, Log, TEXT("Found %d sessions."), SessionSearch->SearchResults.Num());
 
-        /*if (SessionSearch->SearchResults.Num() > 0)
+        if (SessionSearch->SearchResults.Num() > 0)
         {
+            int32 lSessionSearchIndex = 0;
             for (const FOnlineSessionSearchResult& SearchResult : SessionSearch->SearchResults)
             {
+                    UE_LOG(LogTemp, Warning, TEXT("Close!%s   %s"),*SearchResult.GetSessionIdStr(),*SessionToJoin);
+                    if(SearchResult.GetSessionIdStr() == SessionToJoin){
+                    SessionSearchIndex = lSessionSearchIndex;
+                     UE_LOG(LogTemp, Warning, TEXT("Found session to join!"));
+                    break;
+                    }
                 
+                lSessionSearchIndex++;
             }
-        }*/
+        }
+        JoinSession(FName(SessionToJoin));
     }
     else
     {

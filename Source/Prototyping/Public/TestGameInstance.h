@@ -93,8 +93,10 @@ class PROTOTYPING_API UTestGameInstance : public UGameInstance
 
     FString PlayerUserId;
     FName lSessionName;
+    FString SessionToJoin;
+    int32 SessionSearchIndex = 0;
 public:
-    UPROPERTY(BlueprintReadOnly,Category="EOS Variables")
+    UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="EOS Variables")
     bool SessionExisting=false;
 	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="EOS Variables")
 	FString OpenLevelText;
