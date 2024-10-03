@@ -30,6 +30,12 @@ UTestGameInstance::UTestGameInstance()
     {
         UE_LOG(LogTemp, Error, TEXT("OnlineSubsystemEOS is not enabled or not found!"));
     }
+
+
+    //OnCreateSessionCompleteDelegate = FOnCreateSessionCompleteDelegate::CreateUObject(this,&UNetworkInstance::OnSessionCreateComplete);
+	//OnStartSessionCompleteDelegate  = FOnStartSessionCompleteDelegate::CreateUObject(this,&UTestGameInstance::OnSessionStartComplete);
+	//OnFindSessionsCompleteDelegate = FOnFindSessionsCompleteDelegate::CreateUObject(this, &UNetworkInstance::OnSessionFindComplete);
+
 }
 
 void UTestGameInstance::CreateSession(FName sessionName,int32 NumOfPublicConnections)
@@ -43,8 +49,11 @@ void UTestGameInstance::CreateSession(FName sessionName,int32 NumOfPublicConnect
         SessionSettings.bUsesPresence = true;  // Use presence for EOS matchmaking
         SessionSettings.bAllowInvites = true;
         SessionSettings.bUseLobbiesIfAvailable = false;
+        SessionSettings.bAllowJoinInProgress = true;
+        SessionSettings.bAllowJoinViaPresence = true;
 
         SessionSettings.Set(FName("SESSION_NAME_KEY"), sessionName.ToString(), EOnlineDataAdvertisementType::ViaOnlineService);
+        //SessionSettings.Set(FName("SETTING_MAPNAME"), FString("Gameplay_Level"), EOnlineDataAdvertisementType::ViaOnlineService);
 
         // Bind delegate for session creation
         CreateSessionCompleteDelegateHandle = SessionInterface->AddOnCreateSessionCompleteDelegate_Handle(
@@ -65,6 +74,7 @@ void UTestGameInstance::CreateSession(FName sessionName,int32 NumOfPublicConnect
         }
         // Create session for local user 0
         SessionInterface->CreateSession(0, FName(PlayerUserId), SessionSettings);
+
     }else{
         UE_LOG(LogTemp, Error, TEXT("Invalid session interface"));
     }
@@ -287,7 +297,15 @@ void UTestGameInstance::OnCreateSessionComplete(FName SessionName, bool bWasSucc
         SessionExisting = true;
         lSessionName = SessionName;
 
-        JoinSession(SessionName);
+        if (SessionInterface.IsValid())
+    {
+         SessionInterface->AddOnStartSessionCompleteDelegate_Handle(
+                FOnStartSessionCompleteDelegate::CreateUObject(this, &UTestGameInstance::OnStartSessionComplete)
+            );
+
+            // Start the session with the given name
+            SessionInterface->StartSession(SessionName);
+    }
     }
     else
     {
@@ -357,8 +375,11 @@ void UTestGameInstance::OnJoinSessionComplete(FName SessionName, EOnJoinSessionC
 
     if (Result == EOnJoinSessionCompleteResult::Success)
     {
-        UE_LOG(LogTemp, Log, TEXT("Successfully joined session '%s'!"), *SessionName.ToString());
+        UE_LOG(LogTemp, Warning, TEXT("Successfully joined session '%s'!"), *SessionName.ToString());
 
+        if(SessionExisting){
+            GetWorld()->ServerTravel(OpenLevelText);
+        }else{
         // Get the session URL to travel to the game map
         FString ConnectInfo;
         if (SessionInterface->GetResolvedConnectString(SessionName, ConnectInfo))
@@ -369,6 +390,7 @@ void UTestGameInstance::OnJoinSessionComplete(FName SessionName, EOnJoinSessionC
             {
                 PlayerController->ClientTravel(ConnectInfo, TRAVEL_Absolute);
             }
+        }
         }
     }
     else
@@ -444,4 +466,27 @@ void UTestGameInstance::OnFindJoinResultComplete(bool bWasSuccessful)
     {
         UE_LOG(LogTemp, Error, TEXT("Failed to find any sessions."));
     }
+}
+
+void UTestGameInstance::OnStartSessionComplete(FName SessionName, bool bWasSuccessful)
+{
+    // Remove the delegate after it's done (optional but recommended)
+    if (SessionInterface.IsValid())
+    {
+        SessionInterface->ClearOnStartSessionCompleteDelegate_Handle(OnStartSessionCompleteDelegateHandle);
+    }
+
+    if (bWasSuccessful)
+    {
+        UE_LOG(LogTemp, Log, TEXT("Session %s started successfully!"), *SessionName.ToString());
+        if (SessionInterface.IsValid())
+    {
+        JoinSession(SessionName);
+    }
+    }
+    else
+    {
+        UE_LOG(LogTemp, Error, TEXT("Failed to start session %s"), *SessionName.ToString());
+    }
+
 }

@@ -78,6 +78,7 @@ class PROTOTYPING_API UTestGameInstance : public UGameInstance
     void OnEndSessionComplete(FName SessionName, bool bWasSuccessful);
     void OnCloseOldSessionComplete(FName SessionName, bool bWasSuccessful);
     void OnFindJoinResultComplete(bool bWasSuccessful);
+    void OnStartSessionComplete(FName SessionName, bool bWasSuccessful);
 
     // Pointer to the session interface
     IOnlineSessionPtr SessionInterface;
@@ -90,6 +91,7 @@ class PROTOTYPING_API UTestGameInstance : public UGameInstance
     FDelegateHandle FindSessionsCompleteDelegateHandle;
     FDelegateHandle JoinSessionCompleteDelegateHandle;
     FDelegateHandle EndSessionCompleteDelegateHandle;
+    FDelegateHandle OnStartSessionCompleteDelegateHandle;
 
     FString PlayerUserId;
     FName lSessionName;
