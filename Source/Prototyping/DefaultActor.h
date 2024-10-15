@@ -3,24 +3,23 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Character.h"
+#include "GameFramework/Actor.h"
 #include "AbilitySystemInterface.h"
 #include "AbilitySystemComponent.h"
-#include "DefaultCharacter.generated.h"
-
+#include "DefaultActor.generated.h"
 
 UCLASS()
-class PROTOTYPING_API ADefaultCharacter : public ACharacter, public IAbilitySystemInterface
+class PROTOTYPING_API ADefaultActor : public AActor, public IAbilitySystemInterface
 {
 	GENERATED_BODY()
-
-public:
-	// Sets default values for this character's properties
-	ADefaultCharacter();
+	
+public:	
+	// Sets default values for this actor's properties
+	ADefaultActor();
 
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "GAS", meta = (AllowAbstract = "true"))
-	UAbilitySystemComponent* AbilitySystemComponent;
+	class UAbilitySystemComponent* AbilitySystemComponent;
 
 	virtual class UAbilitySystemComponent* GetAbilitySystemComponent() const override
 	{
@@ -39,8 +38,5 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 };
