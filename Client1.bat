@@ -1,0 +1,1 @@
+"C:\Program Files\Epic Games\UE_5.4\Engine\Binaries\Win64\UnrealEditor.exe"  "C:\_Projects\GitHub\Prototyping\Prototyping.uproject" ThirdPersonMap -debug -game -log -AUTH_TYPE="developer" -AUTH_LOGIN="localhost:8081" -AUTH_PASSWORD="Andrei" -epicapp="DefaultClient"
