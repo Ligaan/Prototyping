@@ -1,1 +1,0 @@
-"C:\Program Files\Epic Games\UE_5.4\Engine\Binaries\Win64\UnrealEditor.exe"  "C:\_Projects\GitHub\Prototyping\Prototyping.uproject" ThirdPersonMap -server -log -epicapp="Server"
